@@ -35,8 +35,8 @@
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{overflow-x:hidden;
     font-family:var(--body);
     background:var(--color-bg);
     color:var(--color-ink);
@@ -135,7 +135,7 @@
   .open-note .lead{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-secondary);display:block;margin-bottom:8px}
 
   .hero-photo{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1/1;background:var(--color-surface);border:1px solid var(--color-line)}
-  .hero-photo img{width:100%;height:100%;object-fit:contain;display:block}
+  .hero-photo img{width:100%;height:100%;object-fit:contain;display:block;transform:translateZ(0);will-change:transform;backface-visibility:hidden}
   .hero-photo.empty img{display:none}
   .hero-photo:not(.empty){box-shadow:var(--shadow-photo)}
   .hero-photo .photo-hint{display:none}
@@ -242,7 +242,7 @@
      side-by-side shrunk down. */
   @media (max-width:920px){
     .hero-grid{grid-template-columns:1fr;gap:34px}
-    .hero-photo{order:-1;justify-self:center;width:100%;max-width:260px;aspect-ratio:1/1;border-radius:50%}
+    .hero-photo{order:-1;justify-self:center;width:100%;max-width:280px;aspect-ratio:1/1;border-radius:12px}
     .hero-photo.empty::before{inset:11px;border-radius:50%}
     .hero-photo.empty .photo-hint{padding:30px;font-size:0.72rem;line-height:1.8}
     .ai{grid-template-columns:1fr;gap:24px;padding:30px 28px}
@@ -271,7 +271,7 @@
     .hero{padding:34px 0 40px}
     h1.hero-title{font-size:2.15rem;line-height:1.08}
     .hero-sub{font-size:1.04rem;margin-top:22px}
-    .hero-photo{max-width:220px}
+    .hero-photo{max-width:240px;border-radius:10px}
     .sec-head{margin-bottom:32px}
     .sec-head-rule{margin-top:26px}
     .numbered .row{gap:18px;padding:24px 0}
